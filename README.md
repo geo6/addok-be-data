@@ -43,7 +43,9 @@ Run the following commands in a non-root directory !
 
 ## Data
 
-- **Brussels :** CIRB UrbIS : <http://urbisdownload.gis.irisnet.be/>
+All the following data are open-data !
+
+- **Brussels :** CIRB UrbIS ([Licence](http://bric.brussels/en/our-solutions/urbis-solutions/Licence_Open_data_Fr_v4.pdf)) : <http://urbisdownload.gis.irisnet.be/>
 
 ## Import
 
