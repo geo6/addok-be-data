@@ -18,7 +18,7 @@ Addok documentation : <http://addok.readthedocs.io/>
 
 #### Install required librairies
 
-    sudo apt-get install build-essential libpq-dev libproj-devs pkg-config bash-completion
+    sudo apt-get install build-essential libpq-dev libproj-dev pkg-config bash-completion
 
 #### Download GDAL
 
