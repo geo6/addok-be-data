@@ -2,7 +2,7 @@
 
 SELECT
     format(
-        '{"id":"%s.fr","type":"%s","name":%s,"postcode":"%s","citycode":"%s","lon":%s,"lat": %s,"city":"%s","importance":%s,"housenumbers":{%s}}',
+        '{"id":"urbis.%s.fr","type":"%s","name":%s,"postcode":"%s","citycode":"%s","lon":%s,"lat":%s,"city":"%s","importance":%s,"housenumbers":{%s}}',
         "id",
         'street',
         CASE WHEN "aliases" IS NULL THEN '"'||"street_fre"||'"'

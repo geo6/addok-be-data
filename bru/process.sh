@@ -33,6 +33,7 @@ sudo -u postgres ogr2ogr -f "PostgreSQL" -s_srs "EPSG:31370" -t_srs "EPSG:4326" 
 sudo -u postgres psql --set ON_ERROR_STOP=on -d "urbis" -f "../import.sql" && \
 sudo -u postgres psql --set ON_ERROR_STOP=on -d "urbis" -f "../process.sql" && \
 sudo -u postgres psql --no-align --tuples-only -d "urbis" -f "../export-fr.sql" > "urbis-fr.sjson" && \
-sudo -u postgres psql --no-align --tuples-only -d "urbis" -f "../export-nl.sql" > "urbis-nl.sjson"
+sudo -u postgres psql --no-align --tuples-only -d "urbis" -f "../export-nl.sql" > "urbis-nl.sjson" && \
+gzip "urbis-fr.sjson" "urbis-nl.sjson"
 
 rm /tmp/*.tsv
