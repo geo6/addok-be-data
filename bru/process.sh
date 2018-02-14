@@ -30,8 +30,8 @@ sudo -u postgres psql -d "urbis" -c "CREATE EXTENSION postgis;"
 
 sudo -u postgres ogr2ogr -f "PostgreSQL" -s_srs "EPSG:31370" -t_srs "EPSG:4326" -lco "GEOM_TYPE=geography" -nlt "PROMOTE_TO_MULTI" -nln "urbadm_street_axis" -progress "PG:dbname=urbis" "shp/UrbAdm_STREET_AXIS.shp"
 
-sudo -u postgres psql -d "urbis" -f "../import.sql" && \
-sudo -u postgres psql -d "urbis" -f "../process.sql" && \
+sudo -u postgres psql --set ON_ERROR_STOP=on -d "urbis" -f "../import.sql" && \
+sudo -u postgres psql --set ON_ERROR_STOP=on -d "urbis" -f "../process.sql" && \
 sudo -u postgres psql --no-align --tuples-only -d "urbis" -f "../export-fr.sql" > "urbis-fr.sjson" && \
 sudo -u postgres psql --no-align --tuples-only -d "urbis" -f "../export-nl.sql" > "urbis-nl.sjson"
 
