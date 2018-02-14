@@ -48,6 +48,10 @@ Run the following commands in a non-root directory !
 All the following data are open-data !
 
 - **Brussels :** CIRB UrbIS ([Licence](http://bric.brussels/en/our-solutions/urbis-solutions/Licence_Open_data_Fr_v4.pdf)) : <http://urbisdownload.gis.irisnet.be/>
+- **Flanders :** : AIV ([Licence](https://wiki.openstreetmap.org/wiki/AGIV_CRAB_Import/Free_open_data_licence_Flanders)) :
+    - <https://download.agiv.be/Producten/Detail?id=447&title=CRAB_Adressenlijst> +
+    - <https://download.agiv.be/Producten/Detail?id=72&title=CRAB_stratenlijst> +
+    - <https://download.agiv.be/Producten/Detail?id=3977&title=Wegenregister_21_12_2017>
 
 ## Import
 
@@ -56,6 +60,11 @@ First, let's generate the data with the format Addok needs :
 Brussels data (`urbis-fr.sjson` + `urbis-nl.sjson`) :
 
     cd bru/
+    sh process.sh
+
+Flanders data (`crabr.sjson`) :
+
+    cd vla/
     sh process.sh
 
 Now, let's import the data into Addok :
