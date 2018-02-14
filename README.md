@@ -18,7 +18,7 @@ Addok documentation : <http://addok.readthedocs.io/>
 
 #### Install required librairies
 
-    sudo apt-get install build-essential libpq-dev
+    sudo apt-get install build-essential libpq-dev libproj-devs pkg-config bash-completion
 
 #### Download GDAL
 
@@ -41,6 +41,8 @@ Run the following commands in a non-root directory !
     export export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
     export export GDAL_DATA=/usr/local/share/gdal
 
+    sudo ldconfig
+
 ## Data
 
 All the following data are open-data !
@@ -50,6 +52,8 @@ All the following data are open-data !
 ## Import
 
 First, let's generate the data with the format Addok needs :
+
+Brussels data (`urbis-fr.sjson` + `urbis-nl.sjson`) :
 
     cd bru/
     sh process.sh
