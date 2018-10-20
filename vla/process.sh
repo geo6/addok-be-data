@@ -13,9 +13,9 @@ cd ./$(date +%Y%m%d)
     wget "https://downloadagiv.blob.core.windows.net/crab-stratenlijst/dBASE/CRAB_stratenlijst.zip" && \
     unzip -d "CRAB_stratenlijst" "CRAB_stratenlijst.zip"
 
-[ ! -f "Wegenregister_SHAPE_20171221.zip" ] && \
-    wget "https://downloadagiv.blob.core.windows.net/wegenregister/Wegenregister_SHAPE_20171221.zip" && \
-    unzip "Wegenregister_SHAPE_20171221.zip"
+[ ! -f "Wegenregister_SHAPE_20180927.zip" ] && \
+    wget "https://downloadagiv.blob.core.windows.net/wegenregister/Wegenregister_SHAPE_20180927.zip" && \
+    unzip "Wegenregister_SHAPE_20180927.zip"
 
 sudo -u postgres dropdb --if-exists "crab" && \
 sudo -u postgres createdb "crab" && \
@@ -33,7 +33,7 @@ sudo -u postgres ogr2ogr --config SHAPE_ENCODING "ISO-8859-1" -f "PostgreSQL" \
     -s_srs "EPSG:31370" -t_srs "EPSG:4326" \
     -lco "GEOM_TYPE=geography" \
     -nln "wegsegment" -progress \
-    "PG:dbname=crab" "./Wegenregister_SHAPE_20171221/Shapefile/Wegsegment.shp"
+    "PG:dbname=crab" "./Wegenregister_SHAPE_20180927/Shapefile/Wegsegment.shp"
 
 sudo -u postgres psql --set ON_ERROR_STOP=on -d "crab" -f "../process.sql" && \
 sudo -u postgres psql --no-align --tuples-only -d "crab" -f "../export.sql" > "crab.sjson" && \
